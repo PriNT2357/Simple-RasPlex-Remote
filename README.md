@@ -1,8 +1,5 @@
-Simple-RasPlex-Remote
-=====================
-Created by: Michael Page
+# RasPlex Remote
 
+With this .html file, you can easily control your RasPlex from any browser. The genius behing this remote is [Michael Page](https://github.com/Error-freeIT), I've only made some design changes.
 
-Control RasPlex from any device with a web browser.
-
-Here is the source code of the RasPlex remote shared on my [blog](http://errorfreeit.com.au/blog/2014/1/4/free-online-rasplex-remote).
+PS: I'm running RasPlex on a Raspberry Pi 3.
