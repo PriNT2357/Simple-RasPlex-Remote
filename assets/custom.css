@@ -2,13 +2,17 @@ body {
   background-color: #1D1D1D;
 }
 
-img {
+.img-wrapper {
   display: block;
   margin-left: auto;
   margin-right: auto;
   padding: 40px;
   border: 1px solid #C03D3D;
   border-radius: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  margin-top:40px;
 }
 
 form {
