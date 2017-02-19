@@ -22,7 +22,48 @@
 				alert('Plex is not responding, troubleshooting tips:\n1) Verify server and client address\n2) Check network connectivity\n3) Reboot Plex Home Theater\n4) Reboot Plex Media Server');
    			});
 		});
+		
+		$(document).keydown(function(event) {
+			var keyDownEvent = event || window.event,
+				keycode = (keyDownEvent.which) ? keyDownEvent.which : keyDownEvent.keyCode;
+			var has_mapping = handle_key_event(keycode);
+		});
 	});
+	
+	function handle_key_event(keyCodeNumber) {
+		//console.log(keyCodeNumber);
+		var LEFT = 37,
+		UP = 38,
+		RIGHT = 39,
+		DOWN = 40,
+		ENTER = 13,
+		SPACE = 32;
+
+		switch (keyCodeNumber) {
+			case ENTER:
+				$("map>area[title='OK']").click();
+				break;
+			case SPACE:
+				$("map>area[title='Play/Pause']").click();
+				break;
+			case LEFT:
+				$("map>area[title='Left']").click();
+				break;
+			case UP:
+				$("map>area[title='Up']").click();
+				break;
+			case RIGHT:
+				$("map>area[title='Right']").click();
+				break;
+			case DOWN:
+				$("map>area[title='Down']").click();
+				break;
+			default:
+				return false;
+				break;
+		}
+		return true;
+	}
 	</script>
 	<link href="assets/custom.css" rel="stylesheet">
 	</head>
@@ -31,10 +72,11 @@
 			<img src="assets/buttons.png" style="display:block;margin-left:auto;margin-right:auto;" width="284" height="336" alt="Plex Remote" usemap="#buttonmap">
 		</div>
 		<form>
-		  <label for="server">Server hostname or IP address:</label>
-			<br><input id="server" type="text" placeholder="e.g. plex.local"><br />
-		  <label for="client">Client IP address:</label>
-			<br><input id="client" type="text" placeholder="e.g. 192.168.1.15">
+			<label for="server">Server hostname or IP address:</label><br />
+			<input id="server" type="text" placeholder="e.g. plex.local"><br />
+			<label for="client">Client IP address:</label><br />
+			<input id="client" type="text" placeholder="e.g. 192.168.1.15">
+			<label>Enter - OK | Space - Play/Pause | Arrows</label>
 		</form>
 		<map name="buttonmap">
 			<area cmd="navigation/back" shape="rect" coords="64,0,108,42" alt="back" title="Back">
